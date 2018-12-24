@@ -32,7 +32,7 @@ $building->loadBuilding();
             echo "<img src=\"img/x.gif\" class=\"del\" title=\"cancel\" alt=\"cancel\" /></a></td><td>";
 			echo Building::procResType($jobs['type'])." (Level ".$jobs['level'].")";
 
-			if($jobs['loopcon'] == 1) echo " (waiting loop)";
+			if($jobs['loopcon'] == 1) echo WAITING_LOOP;
 
             echo "</td><td>in <span id=\"timer".++$session->timer."\">";
             echo $generator->getTimeFormat($jobs['timestamp']-time());
