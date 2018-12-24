@@ -18,7 +18,7 @@ $building->loadBuilding();
             
             if($session->gold >= 2) {
             ?> 
-            	<a href="?buildingFinish=1" onclick="return confirm('Finish all construction and research orders in this village immediately for 2 Gold?');" title="Finish all construction and research orders in this village immediately for 2 Gold?"><img class="clock" alt="Finish all construction and research orders in this village immediately for 2 Gold?" src="img/x.gif"/></a>
+            	<a href="?buildingFinish=1" onclick="return confirm('<?php echo FINISH_GOLD; ?>');" title="<?php echo FINISH_GOLD; ?>"><img class="clock" alt="<?php echo FINISH_GOLD; ?>" src="img/x.gif"/></a>
 			<?php 
             }
             ?>
