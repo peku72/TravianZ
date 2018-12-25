@@ -109,7 +109,7 @@ define("TRAVIAN_COPYRIGHT","TravianZ 100% Open Source Travian Clone.");
 //BUILD.TPL
 define("CUR_PROD","Current production");
 define("NEXT_PROD","Production at level ");
-define("CONSTRUCT","Construct Building");
+define("CONSTRUCT_BUILD","Construct Building");
 
 //BUILDINGS
 define("B1","Woodcutter");
