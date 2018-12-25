@@ -143,6 +143,7 @@ define("LOYALTY","Loyalty");
 define("CALCULATED_IN","Calculated in");
 define("SEVER_TIME","Server time:");
 define("HI","HI");
+define("P_IN","in");
 
 //QUEST
 define("Q_CONTINUE","Continue with the next task.");
