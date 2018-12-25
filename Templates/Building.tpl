@@ -18,7 +18,7 @@ $building->loadBuilding();
             
             if($session->gold >= 2) {
             ?> 
-            	<a href="?buildingFinish=1" onclick="return confirm('Finish all construction and research orders in this village immediately for 2 Gold?');" title="Finish all construction and research orders in this village immediately for 2 Gold?"><img class="clock" alt="Finish all construction and research orders in this village immediately for 2 Gold?" src="img/x.gif"/></a>
+            	<a href="?buildingFinish=1" onclick="return confirm('<?php echo FINISH_GOLD; ?>');" title="<?php echo FINISH_GOLD; ?>"><img class="clock" alt="<?php echo FINISH_GOLD; ?>" src="img/x.gif"/></a>
 			<?php 
             }
             ?>
@@ -30,14 +30,16 @@ $building->loadBuilding();
 		if($jobs['master'] == 0){
         	echo "<tr><td class=\"ico\"><a href=\"?d=".$jobs['id']."&a=0&c=$session->checker\">";
             echo "<img src=\"img/x.gif\" class=\"del\" title=\"cancel\" alt=\"cancel\" /></a></td><td>";
-			echo Building::procResType($jobs['type'])." (Level ".$jobs['level'].")";
+            echo Building::procResType($jobs['type'])." (";
+            echo LEVEL. " " .$jobs['level'].")";
+			
 
-			if($jobs['loopcon'] == 1) echo " (waiting loop)";
+			if($jobs['loopcon'] == 1) echo WAITING_LOOP;
 
-            echo "</td><td>in <span id=\"timer".++$session->timer."\">";
+            echo "</td><td>".P_IN. " ". "<span id=\"timer".++$session->timer."\">";
             echo $generator->getTimeFormat($jobs['timestamp']-time());
             echo "</span> hrs.</td>";
-            echo "<td>done at ".date('H:i', $jobs['timestamp'])."</td></tr>";
+            echo "<td>".DONE_AT. " " .date('H:i', $jobs['timestamp'])."</td></tr>";
 		}else{
         	echo "<tr><td class=\"ico\"><a href=\"?d=".$jobs['id']."&a=0&c=$session->checker\">";
             echo "<img src=\"img/x.gif\" class=\"del\" title=\"cancel\" alt=\"cancel\" /></a></td><td>";
@@ -53,4 +55,3 @@ $building->loadBuilding();
         header('Location: '. $the_link);
 		exit;
 } ?>
-
