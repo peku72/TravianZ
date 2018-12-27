@@ -9,7 +9,7 @@ if(!isset($_GET['s'])) {
 }
 $tz=(isset($_GET['t']))? $_GET['t']:1;
     switch($tz) {
-        case 1: $t_zone="Africa/Dakar";break;
+        case 1: $t_zone="Europe/Madrid";break;
         case 2: $t_zone="America/New_York";break;
         case 3: $t_zone="Antarctica/Casey";break;
         case 4: $t_zone="Arctic/Longyearbyen";break;
